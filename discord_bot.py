@@ -4,10 +4,8 @@ import pytz
 import random
 import os
 import mysql.connector
-from googletrans import Translator
 
 intents = discord.Intents.all()
-translator = Translator()
 reactedUserMessageArray = []
 noOfMemberPrevious = 0
 timezone = pytz.timezone('Asia/Hong_Kong')
