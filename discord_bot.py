@@ -12,7 +12,7 @@ timezone = pytz.timezone('Asia/Hong_Kong')
 lastGayMessageTime = timezone.localize(datetime.datetime(1970, 1, 1, 0, 0, 0))
 client = discord.Client(intents=intents)
 cnx = mysql.connector.connect(user='root', password='00000000', host='127.0.0.1', database='anime')
-BOT_TOKEN = os.environ.get('BOT_TOKEN_PEACH')
+BOT_TOKEN = str(os.environ.get('BOT_TOKEN_PEACH'))
 
 @client.event
 async def on_ready():
