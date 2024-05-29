@@ -16,7 +16,6 @@ noOfMemberPrevious = 0
 timezone = pytz.timezone('Asia/Hong_Kong')
 lastGayMessageTime = timezone.localize(datetime.datetime(1970, 1, 1, 0, 0, 0))
 client = discord.Client(intents=intents)
-config = config()
 cnx = mysql.connector.connect(user=cf.DATABASE_USER, password=cf.DATABASE_PASSWORD, host=cf.DATABASE_HOST, database='database')
 BOT_TOKEN = cf.BOT_TOKEN_PEACH
 
