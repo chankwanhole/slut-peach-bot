@@ -4,6 +4,7 @@ import pytz
 import random
 import os
 import mysql.connector
+from .. import config
 
 intents = discord.Intents.all()
 reactedUserMessageArray = []
@@ -11,7 +12,8 @@ noOfMemberPrevious = 0
 timezone = pytz.timezone('Asia/Hong_Kong')
 lastGayMessageTime = timezone.localize(datetime.datetime(1970, 1, 1, 0, 0, 0))
 client = discord.Client(intents=intents)
-cnx = mysql.connector.connect(user='root', password='00000000', host='127.0.0.1', database='anime')
+config = config()
+cnx = mysql.connector.connect(user=config.DATABASE_USER, password=config.DATABASE_PASSWORD, host=config.DATABASE_HOST, database='database')
 BOT_TOKEN = "BOT_TOKEN"
 
 @client.event
