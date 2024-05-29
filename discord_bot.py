@@ -4,7 +4,8 @@ import pytz
 import random
 import os
 import mysql.connector
-from .. import config
+import sys
+from config import config
 
 intents = discord.Intents.all()
 reactedUserMessageArray = []
