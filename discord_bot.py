@@ -5,7 +5,10 @@ import random
 import os
 import mysql.connector
 import sys
-from config import config
+home_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.insert(0, home_path)
+import config
+cf = config.config()
 
 intents = discord.Intents.all()
 reactedUserMessageArray = []
@@ -14,8 +17,8 @@ timezone = pytz.timezone('Asia/Hong_Kong')
 lastGayMessageTime = timezone.localize(datetime.datetime(1970, 1, 1, 0, 0, 0))
 client = discord.Client(intents=intents)
 config = config()
-cnx = mysql.connector.connect(user=config.DATABASE_USER, password=config.DATABASE_PASSWORD, host=config.DATABASE_HOST, database='database')
-BOT_TOKEN = "BOT_TOKEN"
+cnx = mysql.connector.connect(user=cf.DATABASE_USER, password=cf.DATABASE_PASSWORD, host=cf.DATABASE_HOST, database='database')
+BOT_TOKEN = cf.BOT_TOKEN_PEACH
 
 @client.event
 async def on_ready():
