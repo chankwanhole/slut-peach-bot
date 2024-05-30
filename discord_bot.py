@@ -58,7 +58,7 @@ async def on_reaction_add(reaction, user):
         return
 
     cursor = cnx.cursor()
-    cursor.execute("SELECT content FROM sentences WHERE type = 1")
+    cursor.execute("SELECT content FROM sentence WHERE type = 1")
     result = cursor.fetchall()
 
     rapeArray = []
